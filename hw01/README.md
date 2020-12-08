@@ -27,7 +27,7 @@ Posokhin Oleg Otus SpringFramework 2020-11
 
 Запуск приложения
 
-Main класс для запуска: ru.otus.spring.Main
+Main класс для запуска: ru.otus.Main
 Сборка приложения в jar файл: mvn clean package
 
 В директории target выполнить комманду : java -jar hw01-1.0-SNAPSHOT.jar

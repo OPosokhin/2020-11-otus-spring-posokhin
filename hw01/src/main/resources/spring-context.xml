@@ -5,12 +5,12 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- TODO: определите бин класса ru.otus.spring.dao.PersonDaoSimple -->
-    <bean id="QuestionDao" class="ru.otus.spring.dao.QuestionDaoImpl">
+    <bean id="QuestionDao" class="ru.otus.QuestionDaoImpl">
        <constructor-arg name="filName" value="questions.csv"/>
    </bean>
 
     <!-- TODO: определите бин класса ru.otus.spring.PersonServiceImpl -->
-    <bean id="QuestionService" class="ru.otus.spring.service.QuestionServiceImpl">
+    <bean id="QuestionService" class="ru.otus.QuestionServiceImpl">
         <constructor-arg name="dao" ref="QuestionDao"/>
     </bean>
 

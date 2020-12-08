@@ -9,6 +9,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
 
     public QuestionDaoImpl(String filName) {
+
         this.filName = filName;
     }
 
