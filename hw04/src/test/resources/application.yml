@@ -1,0 +1,7 @@
+application:
+  filename: questions
+
+spring:
+   shell:
+     interactive:
+       enabled: false
