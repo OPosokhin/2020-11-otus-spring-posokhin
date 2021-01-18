@@ -57,3 +57,73 @@
 1608488157240:start
 1608488565047:login ol
 1608488568983:start
+1609094005025:s
+1609094225718:a
+1609094419286:start
+1609095054374:help
+1609095080438:addAuthor Posokhin Oleg
+1609095094337:addAuthor
+1609095148799:addAuthor 1, Oleg
+1609095162227:addAuthor 2, 1
+1609097693078:help
+1609098156915:addAuthor 333,Oleg
+1609098177534:addAuthor(33,Oleg)
+1609098472360:addAuthor 333,Oleg
+1609098634437:authorById 1;
+1609098638456:authorById 1
+1609175906293:help
+1609183089359:hepl
+1609183096148:help
+1610442302456:authorById
+1610442317390:authorById 1
+1610442364841:authorByName William Shakespeare
+1610442378482:authorByName William
+1610442495877:authorById 3
+1610651552489:authorById 1
+1610652340741:bookById 1
+1610711729798:bookById 2
+1610711922501:addBook 4, vini, Oleg, 1
+1610712064895:ddBook 42, vini, Oleg, ы
+1610712100742:ddBook 4 vini
+1610712124270:ddBook 333 vini, ssss, sss
+1610712181977:ddBook 333 vini, 1, 1
+1610712409627:ddBook 333 vini, sss
+1610712429096:dBook vini, sss, 1
+1610712756631:dBook
+1610712799805:4, viki, 1, 1 dbBook
+1610712955769:addBook "", ", "
+1610713136474:books
+1610713665277:allbooks
+1610796721722:addBook wiki
+1610796735212:addBook ""iki
+1610796747778:addBook "wiki"
+1610796825122:addBook 5, www
+1610806626620:addBook 1234567678 Oleg  null, null
+1610806651963:addBook 1234567678, Oleg,  2, 22
+1610806745126:addBook "leg"
+1610808333038:addBook 5, oooo
+1610808376801:Failed to convert from type [java.lang.String] to type [@org.springframework.shell.standard.ShellOption long] for value '5,'; nested exception is java.lang.NumberFormatException: For input string: "5,"
+1610808385687:Details of the error have been omitted. You can use the stacktrace command to print the full stacktrace.addBook Oleg
+1610808624666:addBook 'Oleg'
+1610808661380:Add Book
+1610808666394:addBook
+1610808680334:AddBook 4
+1610808689777:addBook 4
+1610809611722:addBook id 8, name Oleg
+1610810000966:addBook
+1610810027148:addBook --id Oleg --name Oleg
+1610810164644:addAuthor 6, Oleg
+1610810335879:addAuthor 6, ooo
+1610810510708:authorById 1
+1610810514737:authorById 3
+1610810517441:authorById 4
+1610810538535:addAuthor
+1610810552793:addAuthor 4 Oleg
+1610810671161:addBook 4 java programm
+1610810688037:addBook 4 java
+1610811331534:addBook 4 java 2 2
+1610811363662:addBook 5 java 2 2
+1610813167807:genreById 1
+1610813189555:addGenre 4 Classic
+1610911006900:authorById 1
+1610960430829:authorById 2
