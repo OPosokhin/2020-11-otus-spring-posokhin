@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    initialization-mode: always
+    data: data.sql
+    schema: schema.sql
+    url: jdbc:h2:mem:book_library
+    username: sa
+    settings:
+      web-allow-others: true
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+
+server:
+  port: 8083
