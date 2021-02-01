@@ -8,9 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.otus.spring.domain.Author;
 import ru.otus.spring.domain.Book;
 import ru.otus.spring.domain.Genre;
-import ru.otus.spring.repository.GenreRepository;
 import ru.otus.spring.repository.AuthorRepository;
 import ru.otus.spring.repository.BookRepository;
+import ru.otus.spring.repository.GenreRepository;
+
 import java.util.Set;
 
 
@@ -22,7 +23,7 @@ public class BookShellService {
     private final GenreRepository genreRepository;
 
     @ShellMethod(value = "Find book by id", key = {"bookById"})
-    public String getById(@ShellOption Long id) {
+    public String getById(@ShellOption String id) {
 
         return bookRepository.findById(id).toString();
     }
@@ -34,10 +35,8 @@ public class BookShellService {
     }
 
     @ShellMethod(value = "Add new book", key = {"addBook"})
-    public String addBook(@ShellOption String name) {
-        final Book book = new Book(name);
-        final Book savedBook = bookRepository.save(book);
-        return savedBook.toString();
+    public void addBook(@ShellOption(value = {"Oleg"}) String authorName) {
+        authorRepository.save(new Author(authorName));
     }
 
     @ShellMethod(value = "Get all books", key = {"books"})
@@ -47,14 +46,14 @@ public class BookShellService {
     }
 
     @ShellMethod(value = "Delete book by id", key = {"deleteBook"})
-    public void delete(@ShellOption long id) {
+    public void delete(@ShellOption String id) {
 
         bookRepository.deleteById(id);
     }
 
     @ShellMethod(value = "Add author to book by their id's bookId, authorId", key = {"addBookAuthor"})
     @Transactional
-    public String addAuthor(long bookId, long authorId) {
+    public String addAuthor(String bookId, String authorId) {
         Author authorToAdd = authorRepository.findById(authorId).get();
         Book book = bookRepository.findById(bookId).get();
         Set<Author> authors = book.getAuthors();
@@ -64,7 +63,7 @@ public class BookShellService {
 
     @ShellMethod(value = "Add genre to book by their id's bookId, authorId", key = {"addBookGenre"})
     @Transactional
-    public String addGenre(long bookId, long genreId) {
+    public String addGenre(String bookId, String genreId) {
         Genre genreToAdd = genreRepository.findById(genreId).get();
         Book book = bookRepository.findById(bookId).get();
         Set<Genre> genres = book.getGenres();

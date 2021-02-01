@@ -13,12 +13,14 @@ public class GenreShellService {
     private final GenreRepository repository;
 
     @ShellMethod(value = "Find genre by id ", key = {"genreById"})
-    public String getById(@ShellOption Long id) {
+    public String getById(@ShellOption String id) {
+
         return repository.findById(id).toString();
     }
 
     @ShellMethod(value = "Find genre by name ", key = {"genreByName"})
     public String getByName(@ShellOption String name) {
+
         return repository.findByName(name).toString();
     }
 
@@ -35,7 +37,7 @@ public class GenreShellService {
     }
 
     @ShellMethod(value = "Delete genre by id ", key = {"deleteGenre"})
-    public void delete(@ShellOption long id) {
+    public void delete(@ShellOption String id) {
         repository.deleteById(id);
     }
 }

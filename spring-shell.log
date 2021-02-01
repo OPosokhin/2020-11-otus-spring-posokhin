@@ -158,3 +158,33 @@
 1611660636361:authorById 2
 1611662304490:commentsByBookId 3
 1611736989963:commentsListByBookId 2
+1611838017212:commentById 1
+1611838030415:authorById 1
+1611838093871:authorById 2
+1611838098543:authorById 1
+1611842098006:authorByName Alan Alexander Milne
+1611842113841:Alan 'Alexander Milne'
+1611842177194:authorByName 'Alexander Milne'
+1611842250641:authorByName "Alexander Milne"
+1611842321668:addAuthor 'Oleg"\n'
+1611842360272:authorByName "Oleg"
+1611842368164:authorByName Oleg
+1611842387618:addAuthor 'Oleg'
+1611842540718:addAuthor Oleg
+1611842568471:authors
+1611842622650:addBook Oleg
+1611855192505:addBook ddd
+1611855490651:addBook Oleg
+1611856128392:addAuthor Oleg
+1611856693552:addAuthor leg
+1611856830082:authorById 6012fb35c6be6043d2702914
+1611856845028:authorByName null
+1611856880422:authorByName J.K.Rowling
+1611856923263:authors
+1611856950027:deleteAuthor 6012fb35c6be6043d2702914
+1611856958625:authors
+1612189278820:bookByName Oleg
+1612189746194:bookByName J.K.Rowling
+1612189847481:bookByName Harry Potter and the Philosophers Stone
+1612190101251:bookById 6012b2274e7c6808cb416230
+1612190173287:bookByName Wonnie-the-Pooh
