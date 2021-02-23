@@ -9,8 +9,8 @@ import ru.otus.spring.domain.Genre;
 import ru.otus.spring.repository.AuthorRepository;
 import ru.otus.spring.repository.BookRepository;
 import ru.otus.spring.repository.GenreRepository;
-import java.util.List;
 
+import java.util.List;
 
 
 @Service
@@ -20,12 +20,10 @@ public class BookService {
     private final AuthorRepository authorRepository;
     private final GenreRepository genreRepository;
 
-
     public Book getById(long id) {
 
         return bookRepository.getOne(id);
     }
-
 
     public String getByName(String name) {
 
@@ -38,14 +36,21 @@ public class BookService {
         return savedBook;
     }
 
-
     public List<Book> getAll() {
+
         return bookRepository.findAll();
     }
 
     public void delete(long id) {
 
         bookRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void update(Book book) {
+        Book findBook = this.bookRepository.getOne(book.getId());
+        findBook.setName(book.getName());
+        this.bookRepository.save(findBook);
     }
 
     @Transactional

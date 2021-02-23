@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
-
 @Data
 @EqualsAndHashCode(of = {"id"})
 @ToString(exclude = "comment")
@@ -48,4 +47,8 @@ public class Book {
     public Book(long id) {
         this.id = id;
     }
+
+    public void setName() {
+    }
+
 }
