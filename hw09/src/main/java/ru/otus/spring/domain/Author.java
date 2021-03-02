@@ -23,8 +23,7 @@ public class Author {
         this.name = name;
     }
 
-    public void save(Author author) {
-    }
+
 }
 
 
