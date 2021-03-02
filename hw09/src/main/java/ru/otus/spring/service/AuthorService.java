@@ -11,10 +11,13 @@ import java.util.List;
 public class AuthorService {
     private final AuthorRepository authorRepository;
 
-
     public String getById( Long id) {
 
         return authorRepository.findById(id).toString();
+    }
+    public Author save(Author author) {
+
+        return authorRepository.save(author);
     }
 
     public String getByName(String name) {
@@ -31,7 +34,6 @@ public class AuthorService {
 
         return authorRepository.findAll();
     }
-
 
     public void delete(long id) {
         authorRepository.deleteById(id);

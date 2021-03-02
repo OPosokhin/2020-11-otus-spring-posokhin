@@ -3,12 +3,8 @@ package ru.otus.spring.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.otus.spring.domain.Author;
 import ru.otus.spring.domain.Book;
-import ru.otus.spring.domain.Genre;
-import ru.otus.spring.repository.AuthorRepository;
 import ru.otus.spring.repository.BookRepository;
-import ru.otus.spring.repository.GenreRepository;
 
 import java.util.List;
 
@@ -17,12 +13,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
-    private final AuthorRepository authorRepository;
-    private final GenreRepository genreRepository;
 
     public Book getById(long id) {
 
         return bookRepository.getOne(id);
+    }
+
+    public Book save(Book book) {
+
+        return bookRepository.save(book);
     }
 
     public String getByName(String name) {
@@ -30,11 +29,6 @@ public class BookService {
         return bookRepository.findByName(name).toString();
     }
 
-    public Book addBook(String name) {
-        final Book book = new Book(name);
-        final Book savedBook = bookRepository.save(book);
-        return savedBook;
-    }
 
     public List<Book> getAll() {
 
@@ -48,40 +42,7 @@ public class BookService {
 
     @Transactional
     public void update(Book book) {
-        Book findBook = this.bookRepository.getOne(book.getId());
-        findBook.setName(book.getName());
-        this.bookRepository.save(findBook);
+        this.bookRepository.save(book);
     }
 
-    @Transactional
-    public Book addAuthor(long bookId, long authorId) {
-        Book book = bookRepository.getOne(bookId);
-        Author author = authorRepository.getOne(authorId);
-        book.getAuthor().add(author);
-        return book;
-    }
-
-    @Transactional
-    public Book removeAuthor(long bookId, long authorId) {
-        Book book = bookRepository.getOne(bookId);
-        Author author = authorRepository.getOne(authorId);
-        book.getAuthor().remove(author);
-        return book;
-    }
-
-    @Transactional
-    public Book addGenre(long bookId, long genreId) {
-        Book book = bookRepository.getOne(bookId);
-        Genre genre = genreRepository.getOne(genreId);
-        book.getGenre().add(genre);
-        return book;
-    }
-
-    @Transactional
-    public Book removeGenre(long bookId, long genreId) {
-        Book book = bookRepository.getOne(bookId);
-        Genre genre = genreRepository.getOne(genreId);
-        book.getGenre().remove(genre);
-        return book;
-    }
 }

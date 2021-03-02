@@ -6,7 +6,6 @@ import ru.otus.spring.domain.Book;
 import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Long>  {
-
     List<Book> findByName(String name);
-
+    List<Book> findAll();
 }

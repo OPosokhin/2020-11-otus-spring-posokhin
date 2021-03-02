@@ -22,6 +22,9 @@ public class Author {
     public Author(String name) {
         this.name = name;
     }
+
+    public void save(Author author) {
+    }
 }
 
 

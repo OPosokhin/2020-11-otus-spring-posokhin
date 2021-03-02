@@ -20,21 +20,16 @@
         .row {
             margin-top: 10px;
         }
-
-        .comments, .comments td {
-            border: 1px solid lightgray;
-            padding: 5px;
-        }
     </style>
 </head>
 <body>
 <a href="/book">Return to book</a>
-<form id="book-form" th:action="@{/edit/__${book.id}__}" th:method="post" action="bookEdit.html">
-    <h1>Book Info:</h1>
+<form id="book-form" th:action="@{/addBook}" th:method="post" action="bookAdd.html">
+    <h1>New Book:</h1>
 
-    <div class="row">
-        <label for="id-input">ID:</label>
-        <input id="id-input" type="text" readonly="readonly" th:value="${book.id}" value="1"/>
+    <div class="row" hidden>
+        <label for="id-input">id:</label>
+        <input id="id-input" name="id" type="text" th:value="${book.id}" value="0"/>
     </div>
 
     <div class="row">
@@ -43,15 +38,15 @@
     </div>
 
     <div class="row">
-        <label for="author">Author:</label>
-        <select id="author" th:field="${book.author.id}">
+        <label for="author-input">Author:</label>
+        <select id="author-input" th:field="${book.author.id}">
             <option th:each="author : ${author}" th:value="${author.id}" th:text="${author.name}"></option>
         </select>
     </div>
 
     <div class="row">
-        <label for="genre">Genre:</label>
-        <select id="genre" th:field="*{book.genre.id}">
+        <label for="genre-input">Genre:</label>
+        <select id="genre-input" th:field="${book.genre.id}">
             <option th:each="genre : ${genre}" th:value="${genre.id}" th:text="${genre.name}"></option>
         </select>
     </div>
@@ -59,8 +54,5 @@
     <div class="row">
         <button type="submit">Save</button>
     </div>
-
 </form>
-
 </body>
-</html>

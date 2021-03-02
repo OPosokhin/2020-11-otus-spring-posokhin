@@ -54,30 +54,6 @@ class BookRepositoryTest {
         assertEquals(newBook, foundAuthor);
     }
 
-    @DisplayName("should find entity by id")
-    @Test
-    void findById() {
-        Book expectedBook = entityManager.find(Book.class, FIRST_BOOK_ID);
-        Book actualBook = repositoryJpa.findById(FIRST_BOOK_ID).get();
-        assertEquals(expectedBook, actualBook);
-        assertEquals(1, actualBook.getAuthor().size());
-        assertEquals("J.K.Rowling", actualBook.getAuthor().toArray(new Author[1])[0].getName());
-        assertEquals(1, actualBook.getGenre().size());
-        assertEquals("Fantastic", actualBook.getGenre().toArray(new Genre[1])[0].getName());
-    }
-
-    @DisplayName("should get book with authors")
-    @Test
-    void countRequests() {
-        SessionFactory sessionFactory = entityManager.getEntityManager().getEntityManagerFactory()
-                .unwrap(SessionFactory.class);
-        sessionFactory.getStatistics().setStatisticsEnabled(true);
-        Book actualBook = repositoryJpa.findById(FIRST_BOOK_ID).get();
-        assertEquals(1, actualBook.getAuthor().size());
-        assertEquals(1, actualBook.getGenre().size());
-        assertEquals(EXPECTED_QUERIES_COUNT_PER_BOOK, sessionFactory.getStatistics().getPrepareStatementCount());
-    }
-
     @DisplayName("should find entity by name")
     @Test
     void findByName() {
@@ -85,7 +61,6 @@ class BookRepositoryTest {
         Book actualBook = repositoryJpa.findByName(expectedBook.getName()).get(0);
         assertEquals(expectedBook, actualBook);
     }
-
 
     @DisplayName("should find all entities")
     @Test
