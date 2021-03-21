@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book info</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input:read-only {
+            background: #d3d3d3;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+
+        .comment, .comment td {
+            border: 1px solid lightgray;
+            padding: 5px;
+        }
+    </style>
+    <script src="/webjars/jquery/3.3.1/jquery.min.js">
+    </script>
+</head>
+<body>
+<a href="/book">Return to book list</a>
+<form id="book-form" action="javascript:void(0);">
+    <h1>Book Edit:</h1>
+
+    <div class="row">
+        <label for="id-input">ID:</label>
+        <input id="id-input" name="id" type="text" readonly="readonly" th:value="${book.id}" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="name-input">Name:</label>
+        <input id="name-input" type="text" th:value="${book.name}" value="Мастер и Маргарита"/>
+    </div>
+
+    <div class="row">
+        <label for="author-input">Author:</label>
+        <select id="author-input" th:field="${book.author.id}">
+            <option th:each="author : ${author}" th:value="${author.id}" th:text="${author.name}"></option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label for="genre-input">Genre:</label>
+        <select id="genre-input" th:field="${book.genre.id}">
+            <option th:each="genre : ${genre}" th:value="${genre.id}" th:text="${genre.name}"></option>
+        </select>
+    </div>
+
+    <div class="row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>
+
+<h1>comment:</h1>
+<table class="comment">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Commnet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment : ${book.comment}">
+        <td class="id" th:text="${comment.id}">1</td>
+        <td th:text="${comment.text}"></td>
+        <td>
+            <button class="delete">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="row">
+    <label for="comment-input">New comment:</label>
+    <input id="comment-input"/>
+</div>
+
+<div class="row">
+    <button id="createComment" type="button">Add comment</button>
+</div>
+
+<script inline="javascript">
+    var bookId = $('#id-input')[0].value;
+
+    /*/редактирование книги/*/
+    $('#book-form').on('submit', (function (e) {
+        var data = {
+            "name": $('#name-input')[0].value,
+            "authorid": $('#author-input option:selected')[0].value,
+            "genreid": $('#genre-input option:selected')[0].value
+        }
+        $.ajax({
+            type: "PATCH",
+            url: '/api/bookEdit/' + bookId,
+            data: data
+        });
+    }));
+
+
+    /*/добавление коментария/*/
+    $('#createComment').on('click', (function (e) {
+        var text = $('#comment-input')[0].value;
+        var data = {"text": text}
+        $.ajax({
+            type: "POST",
+            url: '/api/bookEdit/' + bookId + '/comment',
+            data: data
+        }).done(function (c) {
+            var newElement = $(".comment tbody").append(`
+                    <tr>
+                        <td class="id">` + c + `</td>
+                        <td>` + text + `</td>
+                        <td>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                `);
+            $(".comment tbody tr:last-child .delete").on('click', function () {
+                var ID = $(this).parents("tr").children(".id").text();
+                $.ajax({
+                    type: "DELETE",
+                    url: '/api/comment/' + ID
+                });
+                $(this).parents("tr:first").remove();
+            });
+            $('#comment-input')[0].value = "";
+        })
+    }));
+
+    /*/удаление коментария/*/
+    $("tr td .delete").on('click', function () {
+        var ID = $(this).parents("tr").children(".id").text();
+        $.ajax({
+            type: "DELETE",
+            url: '/api/comment/' + ID
+        });
+        $(this).parents("tr:first").remove();
+    });
+
+</script>
+</body>
+</html>
