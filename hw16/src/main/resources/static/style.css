@@ -1,0 +1,8 @@
+nav > div {
+    display: inline; /* the default for span */
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid blue;
+    background-color: yellow;
+}
