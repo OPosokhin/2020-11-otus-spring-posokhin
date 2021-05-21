@@ -1,0 +1,73 @@
+2021-04-17 17:38:23.019  INFO 6662 --- [main] ru.otus.spring.Main                      : Starting Main using Java 13.0.1 on XiMiK.local with PID 6662 (/Users/olegposokhin/IdeaProjects/OTUS/2020-11-otus-spring-posokhin/hw16/target/classes started by olegposokhin in /Users/olegposokhin/IdeaProjects/OTUS/2020-11-otus-spring-posokhin)
+2021-04-17 17:38:23.026  INFO 6662 --- [main] ru.otus.spring.Main                      : No active profile set, falling back to default profiles: default
+2021-04-17 17:38:24.120  INFO 6662 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-04-17 17:38:24.199  INFO 6662 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+2021-04-17 17:38:24.673  INFO 6662 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-17 17:38:24.680  INFO 6662 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-17 17:38:24.681  INFO 6662 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-04-17 17:38:24.775  INFO 6662 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-17 17:38:24.776  INFO 6662 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
+2021-04-17 17:38:24.878  INFO 6662 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-17 17:38:25.013  INFO 6662 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-17 17:38:25.079  INFO 6662 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:hw16'
+2021-04-17 17:38:25.232  INFO 6662 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-17 17:38:25.267  INFO 6662 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-17 17:38:25.295  WARN 6662 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-17 17:38:25.315  INFO 6662 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2021-04-17 17:38:25.439  INFO 6662 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/h2-console/**'] with []
+2021-04-17 17:38:25.440  INFO 6662 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/templates/**'] with []
+2021-04-17 17:38:25.440  INFO 6662 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/actuator/**'] with []
+2021-04-17 17:38:25.445  INFO 6662 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-17 17:38:25.475  INFO 6662 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25c1f5ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@5345dfe8, org.springframework.security.web.header.HeaderWriterFilter@1c62c3fd, org.springframework.security.web.authentication.logout.LogoutFilter@8f2e3e6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a056b26, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@48567727, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4bce62b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a1dda83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14457a95, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@250967f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bf018dd, org.springframework.security.web.session.SessionManagementFilter@49b89425, org.springframework.security.web.access.ExceptionTranslationFilter@1c74d19, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e974b9e]
+2021-04-17 17:38:25.547  INFO 6662 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-04-17 17:38:25.913  INFO 6662 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/actuator'
+2021-04-17 17:38:26.060  INFO 6662 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-17 17:38:26.068  INFO 6662 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 17:38:26.088  INFO 6662 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-17 17:38:26.089  INFO 6662 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-04-17 17:38:26.386  INFO 6662 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-04-17 17:38:26.401  INFO 6662 --- [main] ru.otus.spring.Main                      : Started Main in 3.722 seconds (JVM running for 4.431)
+2021-04-17 17:38:26.916  INFO 6662 --- [RMI TCP Connection(1)-192.168.1.189] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-17 17:38:26.917  INFO 6662 --- [RMI TCP Connection(1)-192.168.1.189] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-17 17:38:26.919  INFO 6662 --- [RMI TCP Connection(1)-192.168.1.189] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-17 17:45:36.794 ERROR 6662 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+org.springframework.security.web.firewall.RequestRejectedException: The request was rejected because the URL contained a potentially malicious String "//"
+	at org.springframework.security.web.firewall.StrictHttpFirewall.rejectedBlocklistedUrls(StrictHttpFirewall.java:456) ~[spring-security-web-5.4.1.jar:5.4.1]
+	at org.springframework.security.web.firewall.StrictHttpFirewall.getFirewalledRequest(StrictHttpFirewall.java:429) ~[spring-security-web-5.4.1.jar:5.4.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:196) ~[spring-security-web-5.4.1.jar:5.4.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.1.jar:5.4.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.1.jar:5.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.1.jar:5.3.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.0.jar:2.4.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.1.jar:5.3.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.1.jar:5.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.1.jar:5.3.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.39.jar:9.0.39]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2021-04-17 17:45:37.170  WARN 6662 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-04-17 17:54:10.653  INFO 6662 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 17:54:10.656  INFO 6662 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-17 17:54:10.657  INFO 6662 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-17 17:54:10.660  INFO 6662 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
