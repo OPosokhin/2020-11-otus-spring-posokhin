@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "logging.file.level.org.springframework.web",
+      "type": "java.lang.String",
+      "description": "Description for logging.file.level.org.springframework.web."
+  }
+] }
